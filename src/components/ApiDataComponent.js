@@ -13,9 +13,9 @@ import { Component } from 'react';
 import axios from 'axios';  // Library used to send asynchronous HTTP requests to RESTful endpoints (APIs)
 
 class ApiDataComponent extends Component {
-  constructor(props){  // Initialize state with an empty users array
+  constructor(props){  // Store received data in state's "users" object
     super(props);
-    this.state = {
+    this.state = {  // Initialize state with an empty users array
       users: []
     }
   }
@@ -27,16 +27,16 @@ class ApiDataComponent extends Component {
     // Await for promise (completion) returned from API call
     try {  // Accept success response as array of JSON objects (users)
       let response = await axios.get(linkToAPI);
-      this.setState({users: response.data});
+      this.setState({users: response.data});  // Store received data in state's "users" object
     } 
-    catch (error) {  // Perform action when there is an error response
+    catch (error) {  // Print out errors at console when there is an error response
       if (error.response) {
         /*
         The request was made and the server responded with a
         status code that falls out of the range of 2xx
         */
-        console.log(error.response.data); 
-        console.log(error.response.status); 
+        console.log(error.response.data);  // Print out error message
+        console.log(error.response.status);  // Print out error status code
       }    
     }
   }  
@@ -62,6 +62,3 @@ class ApiDataComponent extends Component {
 }
 
 export default ApiDataComponent;
-
-
-

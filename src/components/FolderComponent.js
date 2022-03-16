@@ -32,9 +32,7 @@ class FolderComponent extends Component {
         return (  
           <div className="folder-container">
             <h1>Folder List</h1>
-
             <button id="toggle-button" onClick={this.handleToggleClick}>Toggle</button>
-
             <ul>
               <li>Folder 1</li>
               <li>Folder 2</li>
@@ -48,7 +46,6 @@ class FolderComponent extends Component {
         return (  
           <div className="folder-container">
             <h1>Folder List</h1>
-
             <button id="toggle-button" onClick={this.handleToggleClick}>Toggle</button>
           </div>  
         );

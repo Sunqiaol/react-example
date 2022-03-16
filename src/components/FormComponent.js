@@ -24,23 +24,24 @@ class FormComponent extends Component {
         }
     }
 
-    // Method to display "Edit User" view
+    // Display "Edit User" view
     edit = () => {
       this.setState({showForm: true});
     }
+  
+    // Update value of first name value when data is changed
+    updateFirstName = (event) => {
+      this.setState({firstNameValue: event.target.value})
+    }
+  
+    // Update value of last name value when data is changed
+    updateLastName = (event) => {
+      this.setState({lastNameValue: event.target.value})
+    }
 
-    // Method to save user input and update component state with new input
+    // Save user input and update component state with new name data
     save = () => {
-      // Wrong way: Pass an object to setState() when accessing current state
-      /*
-      this.setState(
-        { showForm: false, 
-          firstName: this.state.firstNameValue, 
-          lastName: this.state.lastNameValue
-        }
-      );
-      */
-      // Right way: Pass function into setState() when accessing current state
+      // Pass a function into setState() to update state with new name data
       this.setState(state => {
           return {firstName: state.firstNameValue, lastName: state.lastNameValue}
         }
@@ -49,43 +50,29 @@ class FormComponent extends Component {
       this.setState({showForm: false});
     }
   
-    // Method to cancel user input and hide "Edit User" view
+    // Cancel user input and hide "Edit User" view
     cancel = () => {
       this.setState({showForm: false});
     }
   
-    // Method to update value of first name
-    updateFirstName = (event) => {
-      this.setState({firstNameValue: event.target.value})
-    }
-  
-    // Method to update value of last name
-    updateLastName = (event) => {
-      this.setState({lastNameValue: event.target.value})
-    }
-  
     render(){  // Conditional rendering
-      if (this.state.showForm) {
+      if (this.state.showForm) {  // "Edit User" page view
         return (
           <div className="edit-form-container">
             <h1>Edit User</h1>
-
             First Name:<input className="edit-firstName" onChange={this.updateFirstName} placeholder={this.state.firstName}/>
             Last Name:<input className="edit-lastName" onChange={this.updateLastName} placeholder={this.state.lastName}/>
-
             <button className="save-button" onClick={this.save}>Save</button>
             <button className="cancel-button" onClick={this.cancel}>Cancel</button>
           </div>  
         );
       } 
-      else {
+      else {  // Main page "User Information" view
         return (  
           <div className="form-container">
             <h1>User Information</h1>
-
             <div className="firstName">First Name: {this.state.firstName}</div>
             <div className="lastName">Last Name: {this.state.lastName}</div>
-
             <button id="edit-button" onClick={this.edit}>Edit</button>
           </div>  
         );
@@ -93,4 +80,4 @@ class FormComponent extends Component {
     }
   }
 
-  export default FormComponent;
+export default FormComponent;

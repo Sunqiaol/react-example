@@ -14,7 +14,6 @@ const TextAreaComponent = (props) => {
   return (
     <div style={{width: 400, backgroundColor: 'white'}}>
       <h1>Message from {props.userName}</h1>
-
       <TextField
         label="Title"
         style={{ margin: 8, backgroundColor: 'lightblue' }}
@@ -22,7 +21,6 @@ const TextAreaComponent = (props) => {
         fullWidth
         margin="normal"          
       />
-
       <TextField
         style={{ margin: 8, backgroundColor: 'lightblue' }}          
         label="Note"
