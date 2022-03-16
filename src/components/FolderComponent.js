@@ -21,13 +21,13 @@ class FolderComponent extends Component {
       }
     }
   
-    handleToggleClick = () => {  // Method to toggle display of folder list based on button click
+    handleToggleClick = () => {  // Toggle display of folder list based on button click
       this.setState(state => {
         return {showList: !state.showList}
       });
     }
   
-    render() {  // Method to render React element
+    render() {  // Render React element
       if (this.state.showList) {  // Conditional rendering
         return (  
           <div className="folder-container">
