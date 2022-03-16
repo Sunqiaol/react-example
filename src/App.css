@@ -1,0 +1,15 @@
+body {
+	color: red;
+}
+
+.folder-container {
+	background-color: bisque;
+}
+
+#toggle-button {
+	font: 30px "Courier New";
+}
+
+input, button {
+	margin: 5px;
+}
