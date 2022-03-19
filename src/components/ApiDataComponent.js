@@ -27,16 +27,15 @@ class ApiDataComponent extends Component {
     // Await for promise (completion) returned from API call
     try {  // Accept success response as array of JSON objects (users)
       let response = await axios.get(linkToAPI);
+      console.log(response);  // Print out response
+      // To get data object in the response, need to use "response.data"
       this.setState({users: response.data});  // Store received data in state's "users" object
     } 
     catch (error) {  // Print out errors at console when there is an error response
       if (error.response) {
-        /*
-        The request was made and the server responded with a
-        status code that falls out of the range of 2xx
-        */
-        console.log(error.response.data);  // Print out error message
-        console.log(error.response.status);  // Print out error status code
+        // The request was made, and the server responded with error message and status code.
+        console.log(error.response.data);  // Print out error message (e.g., Not Found)
+        console.log(error.response.status);  // Print out error status code (e.g., 404)
       }    
     }
   }  
