@@ -1,3 +1,7 @@
+/*==================================================
+index.js
+It sets up the Redux Store with boilerplate components.
+================================================== */
 import { applyMiddleware, createStore } from 'redux';
 import { createLogger } from 'redux-logger';
 import thunkMiddleware from 'redux-thunk';
@@ -10,5 +14,5 @@ const middleware = applyMiddleware(thunkMiddleware, logger);
 
 const store = createStore(reducer, middleware);
 
-// Export the store by default, which will be provided to and injected within the entire application;
+// Export the store to be used within the entire application
 export default store;

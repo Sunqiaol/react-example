@@ -5,6 +5,7 @@ This repository contains React application examples using the following React co
 3. FormComponent
 4. ApiDataComponent
 5. SearchComponent
+6. ReduxComponent
 
 External Application Programming Interface (API):
 - API used for ApiDataComponent: https://jsonplaceholder.typicode.com/
