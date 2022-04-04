@@ -20,7 +20,7 @@ const getUsers = (users) => {
 // THUNK CREATOR: 
 // It contains a Thunk (it is an Action creator and dispatches the Action object to Reducer)
 // - Makes an async API call to retrieve data from remote website.
-// - Dispatches an Action to Reducer with received data.
+// - Dispatches an Action object to Reducer with received data.
 export const getUsersThunk = () => async dispatch => {
   // The Thunk
   let linkToAPI = 'https://jsonplaceholder.typicode.com/users';  // Link to remote website API

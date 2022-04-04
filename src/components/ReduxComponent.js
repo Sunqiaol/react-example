@@ -53,11 +53,11 @@ function mapDispatch(dispatch) {
 // The "mapState" is called when the Store State changes. 
 // It returns an object of "users" data that ReduxComponent needs.
 function mapState(state) {
-  return {  // Get the retreived user data from the State
+  return {  // Get the retrieved user data from the State
     users: state.users
   }
 }
-// ReduxComponent uses "connect" function to connet to Redux Store and to read values from the Store 
+// ReduxComponent uses "connect" function to connect to Redux Store and to read values from the Store 
 // (and re-read the values when the Store State updates).
 export default connect(mapState, mapDispatch)(ReduxComponent)
 
