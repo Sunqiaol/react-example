@@ -61,7 +61,9 @@ class FormComponent extends Component {
           <div className="edit-form-container">
             <h1>Edit User</h1>
             First Name:<input className="edit-firstName" onChange={this.updateFirstName} placeholder={this.state.firstName}/>
+            <br/>
             Last Name:<input className="edit-lastName" onChange={this.updateLastName} placeholder={this.state.lastName}/>
+            <br/>
             <button className="save-button" onClick={this.save}>Save</button>
             <button className="cancel-button" onClick={this.cancel}>Cancel</button>
           </div>  
@@ -72,7 +74,9 @@ class FormComponent extends Component {
           <div className="form-container">
             <h1>User Information</h1>
             <div className="firstName">First Name: {this.state.firstName}</div>
+            <br/>
             <div className="lastName">Last Name: {this.state.lastName}</div>
+            <br/>
             <button id="edit-button" onClick={this.edit}>Edit</button>
           </div>  
         );

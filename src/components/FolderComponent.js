@@ -37,7 +37,7 @@ class FolderComponent extends Component {
               <li>Folder 1</li>
               <li>Folder 2</li>
               <li>Folder 3</li>
-              <li>Input props Data: {this.props.inputData}</li>
+              <li>Input Props Data: {this.props.inputData}</li>
             </ul>
           </div>  
         );
