@@ -40,8 +40,9 @@ class SearchComponent extends Component {
     let linkToAPI = 'https://pokeapi.co/api/v2/pokemon/'+pokemonName;
                     //'https://pokeapi.co/api/v2/pokemon/ditto';
 
-    // Send request if search input is not empty
+    // Send request if search input is not empty (removing whitespace from both sides of input string)
     if (pokemonName.trim() !== '') {
+      // Await for promise (completion) returned from API call
       try {  // Accept success response as array of JSON objects (apiData)
         let response = await axios.get(linkToAPI);
         console.log(response);  // Print out response
@@ -96,13 +97,15 @@ class SearchComponent extends Component {
         { this.state.found  // Conditional rendering
           ? <div>
               <h1>{this.state.apiData.name}</h1>
-              <table id="data">
+              <table id="data" border="1">
                 <tbody>
-                {this.makeTable()}
+                  {this.makeTable()}
                 </tbody>
               </table>
               <p>Abilities:</p>
-              <ul>{this.makeList()}</ul>
+              <ul>
+                {this.makeList()}
+              </ul>
             </div> 
           : <h4>No results</h4>
         }

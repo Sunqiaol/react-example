@@ -19,8 +19,8 @@ class FormComponent extends Component {
             showForm: false,
             firstName: '',
             lastName: '',
-            firstNameValue: '',
-            lastNameValue: ''
+            firstNameInput: '',
+            lastNameInput: ''
         }
     }
 
@@ -29,21 +29,23 @@ class FormComponent extends Component {
       this.setState({showForm: true});
     }
   
-    // Update value of first name value when data is changed
+    // Update state's firstNameInput when input field data changes
     updateFirstName = (event) => {
-      this.setState({firstNameValue: event.target.value})
+      this.setState({firstNameInput: event.target.value})
     }
-  
-    // Update value of last name value when data is changed
+    // Update state's lastNameInput when input field data changes
     updateLastName = (event) => {
-      this.setState({lastNameValue: event.target.value})
+      this.setState({lastNameInput: event.target.value})
     }
 
-    // Save user input and update component state with new name data
+    // Save user input and update state's firstName and lastName with new name data
     save = () => {
       // Pass a function into setState() to update state with new name data
       this.setState(state => {
-          return {firstName: state.firstNameValue, lastName: state.lastNameValue}
+          return {
+            firstName: state.firstNameInput, 
+            lastName: state.lastNameInput
+          }
         }
       );
       // Pass object to setState() to hide "Edit User" view

@@ -22,7 +22,7 @@ class ApiDataComponent extends Component {
 
   // Make async API call to retrieve data from remote website
   async componentDidMount() {
-    let linkToAPI = 'https://jsonplaceholder.typicode.com/users';  // Link to remote website API
+    let linkToAPI = 'https://jsonplaceholder.typicode.com/users';  // Link to remote website API endpoint
 
     // Await for promise (completion) returned from API call
     try {  // Accept success response as array of JSON objects (users)

@@ -8,7 +8,8 @@ Functionalities:
 Practice:
 Change backgroundColor of "Title" textarea to yellow.
 ================================================== */
-import TextField from '@material-ui/core/TextField';  // Library for building UI with React components
+// Import "material-ui" for building UI with React components
+import TextField from '@material-ui/core/TextField';  
 
 const TextAreaComponent = (props) => {
   return (
