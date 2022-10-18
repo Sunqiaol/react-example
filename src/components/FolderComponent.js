@@ -14,20 +14,21 @@ In Add.js, add a second instance of FolderComponent with inputData="HELLO WORLD"
 import { Component } from 'react'
 
 class FolderComponent extends Component {
-    constructor(props) {  // Set initial state to show folder list
+    // Set initial state to show folder list
+    constructor(props) {  
       super(props);
       this.state = {  // Set showList to true
         showList: true 
       }
     }
-  
-    handleToggleClick = () => {  // Toggle display of folder list based on button click
+    // Toggle display of folder list based on button click
+    handleToggleClick = () => {  
       this.setState(state => {
         return {showList: !state.showList}
       });
     }
-  
-    render() {  // Render React element
+    // Return (render) React element
+    render() {  
       if (this.state.showList) {  // Conditional rendering
         return (  
           <div className="folder-container">
