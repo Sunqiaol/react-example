@@ -29,7 +29,7 @@ class SearchComponent extends Component {
     }
   }
 
-  // Update value of searchText value when search input is changed
+  // Update value of searchText value when search input changes
   handleInputChange = (event) => {
     this.setState({searchText: event.target.value});
   }
