@@ -9,7 +9,7 @@ import ReduxComponent from './components/ReduxComponent';
 function App() {  // Need to replace the component with a specific one from the list below
   return (
     <div className="App">
-      <FolderComponent inputData="Folder 4" />
+      <ReduxComponent />
     </div>
   );
 }

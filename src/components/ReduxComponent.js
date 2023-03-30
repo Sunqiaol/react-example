@@ -41,24 +41,25 @@ class ReduxComponent extends Component {
   }
 };
 
-// The following 2 parts construct the "connect" function used by ReduxComponent to connect to Redux Store.  
-// 1. Passing Redux Thunk (action creator) as props to the "connect" function
+// The following 2 parts construct the "connect" function used by ReduxComponent to connect to Redux.  
+// 1. Passing Thunk (action creator) as props to the "connect" function
 // The "mapDispatch" is to call the specific Thunk to dispatch its action.
 function mapDispatch(dispatch) {
   return { 
     getUsersThunk: () => dispatch(getUsersThunk())  // Dispatch the Action "getUsersThunk" to get data from remote website.
   }
 }
-// 2. Passing Redux State as props to the "connect" function
-// The "mapState" is called when the Store State changes. 
+// 2. Passing State as props to the "connect" function
+// The "mapState" is called when the State changes. 
 // It returns an object of "users" data that ReduxComponent needs.
 function mapState(state) {
   return {  // Get the retrieved user data from the State
     users: state.users
   }
 }
-// ReduxComponent uses "connect" function to connect to Redux Store and to read values from the Store 
-// (and re-read the values when the Store State updates).
+
+// Connect (register) ReduxComponent to Redux, specifying State data and Reducer to be used.
+// Syntax: connect([mapState], [mapDispatch])(component);
 export default connect(mapState, mapDispatch)(ReduxComponent)
 
 

@@ -8,10 +8,10 @@ import thunkMiddleware from 'redux-thunk';
 
 import { reducer } from './getUsers';
 
-// Construct the Redux store;
-const logger = createLogger({ collapsed: true });
-const middleware = applyMiddleware(thunkMiddleware, logger);
-
+// Construct Redux store
+const logger = createLogger({ collapsed: true });  // Middleware to log actions and display in developer console.
+const middleware = applyMiddleware(thunkMiddleware, logger);  // Apply Think and Logger middleware
+// Syntax: createStore(reducer, [preloadedOption])
 const store = createStore(reducer, middleware);
 
 // Export the store to be used within the entire application
